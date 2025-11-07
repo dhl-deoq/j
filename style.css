@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+@keyframes explode {
+    0% { transform: scale(0.1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(5) rotate(180deg); opacity: 0.5; }
+    100% { transform: scale(10) rotate(360deg); opacity: 0; }
+}
+
+@keyframes flood {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.particle {
+    position: absolute;
+    animation: explode 0.5s linear infinite;
+    background: radial-gradient(circle, red, blue, green, yellow);
+    border-radius: 50%;
+}
+
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    color: #0f0;
+    animation: flood 0.1s linear infinite;
+}
